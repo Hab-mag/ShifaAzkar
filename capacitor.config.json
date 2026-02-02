@@ -1,0 +1,8 @@
+{
+  "appId": "ru.shifa.azkar",
+  "appName": "Шифа",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}

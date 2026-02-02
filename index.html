@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#0d3b2c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Шифа — Аяты, Азкары и Дуа</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+      <button type="button" class="back-btn" id="backBtn" aria-label="Назад" hidden></button>
+      <h1 class="title" id="pageTitle">Шифа</h1>
+    </header>
+
+    <main class="main">
+      <section id="home" class="screen active">
+        <p class="tagline">Аяты лечения, азкары и дуа по разным случаям</p>
+        <nav class="nav-cards">
+          <a href="#" class="nav-card" data-section="ayat">
+            <span class="nav-card-icon">📖</span>
+            <span class="nav-card-title">Аяты лечения (Рукья)</span>
+            <span class="nav-card-desc">Аяты Корана от сглаза, порчи и болезней</span>
+          </a>
+          <a href="#" class="nav-card" data-section="azkar">
+            <span class="nav-card-icon">📿</span>
+            <span class="nav-card-title">Азкары</span>
+            <span class="nav-card-desc">Утренние и вечерние поминания</span>
+          </a>
+          <a href="#" class="nav-card" data-section="dua">
+            <span class="nav-card-icon">🤲</span>
+            <span class="nav-card-title">Дуа</span>
+            <span class="nav-card-desc">Мольбы по разным случаям жизни</span>
+          </a>
+        </nav>
+      </section>
+
+      <section id="ayat" class="screen">
+        <div class="category-list" id="ayatCategories"></div>
+      </section>
+
+      <section id="azkar" class="screen">
+        <div class="category-list" id="azkarCategories"></div>
+      </section>
+
+      <section id="dua" class="screen">
+        <div class="category-list" id="duaCategories"></div>
+      </section>
+
+      <section id="category" class="screen">
+        <div class="content-list" id="contentList"></div>
+      </section>
+
+      <section id="reader" class="screen">
+        <div class="reader-toolbar">
+          <button type="button" class="font-size-btn" id="fontSmaller">A−</button>
+          <span class="font-size-label" id="fontSizeLabel">100%</span>
+          <button type="button" class="font-size-btn" id="fontLarger">A+</button>
+        </div>
+        <article class="reader-content" id="readerContent"></article>
+      </section>
+    </main>
+  </div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(function () {});
+    }
+  </script>
+</body>
+</html>
